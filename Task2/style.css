@@ -1,10 +1,124 @@
-*{
+/* -------------------- Global -------------------- */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
-html,body{
-    height: 100%;
-    width: 100%;
+/* -------------------- Card Box -------------------- */
+#box {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 24px 32px;
+    border-radius: 18px;
+    width: 320px;
+    max-width: 100%;
+    
+    /* Glass effect */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    /* Shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.17);
+
+    /* Animation */
+    transition: 0.35s ease;
+    transform: translateY(0);
+}
+
+/* Hover animation */
+#box:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    border-color: #4d8bff;
+}
+
+/* -------------------- Typography -------------------- */
+#box h2 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    color: #222;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#box p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* -------------------- Button -------------------- */
+button {
+    margin-top: 22px;
+    padding: 12px;
+
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #007bff, #0056e0);
+    color: white;
+    font-weight: 600;
+
+    /* Glow + depth */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transition: 0.3s ease-in-out;
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+    background: linear-gradient(135deg, #0068e0, #0047b3);
+}
+
+/* Button active */
+button:active {
+    transform: scale(0.96);
+}
+
+/* -------------------- RESPONSIVE BREAKPOINTS -------------------- */
+
+/* Small Phones (Under 400px) */
+@media (max-width: 400px) {
+    #box {
+        width: 95%;
+        padding: 20px 22px;
+        border-radius: 14px;
+    }
+
+    #box h2 {
+        font-size: 20px;
+    }
+
+    #box p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+/* Tablets (400px to 768px) */
+@media (max-width: 768px) {
+    #box {
+        width: 85%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    #box {
+        width: 380px;
+    }
 }
